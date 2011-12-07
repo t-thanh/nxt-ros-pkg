@@ -1,0 +1,9 @@
+<stack>
+  <description brief="nxt_navigation">nxt_navigation</description>
+  <author>Maintained by fred</author>
+  <license>BSD</license>  
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/nxt_navigation</url>
+  <depend stack="ros" />
+
+</stack>

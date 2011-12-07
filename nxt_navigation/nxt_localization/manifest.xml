@@ -1,0 +1,17 @@
+<package>
+  <description brief="nxt_localization">
+
+     nxt_localization
+
+  </description>
+  <author>Frederik Hegger</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/nxt_localization</url>
+
+  <depend package="tf"/>
+  <depend package="ar_kinect"/>
+
+</package>
+
+

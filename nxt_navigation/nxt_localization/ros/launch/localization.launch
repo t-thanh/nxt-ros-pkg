@@ -1,0 +1,9 @@
+<launch>
+	<node pkg="tf" type="static_transform_publisher" name="openni_base_link" args="0.0 0.0 1.59 0 0.785 0 /world /openni_camera 100" />
+
+	<node name="ar_kinect" pkg="ar_kinect" type="ar_kinect" respawn="false" output="screen">
+		<param name="marker_pattern_list" type="string" value="$(find nxt_localization)/ros/cfg/markers.cfg"/>
+		<param name="marker_data_directory" type="string" value="$(find ar_pose)"/>
+		<param name="threshold" type="int" value="100"/>
+	</node>
+</launch>
