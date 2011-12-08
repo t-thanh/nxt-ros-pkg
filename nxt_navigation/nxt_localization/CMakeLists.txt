@@ -23,6 +23,7 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 
 include_directories(
 	${PROJECT_SOURCE_DIR}/common/include
+	${PROJECT_SOURCE_DIR}/ros/include
 )
 
 #common commands for building c++ executables and libraries
@@ -38,9 +39,26 @@ rosbuild_add_library(nxt_bluetooth
 	common/src/nxt.cpp
 )
 
-########### EXECUTEABLES
-rosbuild_add_executable(test_bluetooth_connection common/test/bluetooth_connection.cpp)
-target_link_libraries(test_bluetooth_connection 
+########### EXECUTEABLES ############################
+rosbuild_add_executable(ar_kinect_bluetooth 
+	ros/src/ar_kinect_bluetooth.cpp
+	ros/src/ar_object.cpp
+)
+target_link_libraries(ar_kinect_bluetooth
 	bluetooth
 	nxt_bluetooth
+	GLU 
+	GL 
+	glut 
+	ARgsub 
+	AR 
+	ARMulti 
+	ARvideo
 )
+
+########### TESTS ####################################
+#rosbuild_add_executable(test_bluetooth_connection common/test/bluetooth_connection.cpp)
+#target_link_libraries(test_bluetooth_connection 
+#	bluetooth
+#	nxt_bluetooth
+#)
